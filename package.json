@@ -1,0 +1,22 @@
+{
+	"name": "EstruturasDeDados2022",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest",
+		"docs": "./node_modules/.bin/jsdoc -c jsdoc.json"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.17.8",
+		"@babel/plugin-proposal-class-properties": "^7.16.7",
+		"@babel/preset-env": "^7.16.11",
+		"@types/jest": "^27.4.1",
+		"babel-jest": "^27.5.1",
+		"jest": "^27.5.1",
+		"jsdoc": "^3.6.10"
+	}
+}
