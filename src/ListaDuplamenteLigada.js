@@ -170,18 +170,6 @@ class ListaDuplamenteLigada {
 		}
 		return cont;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
     
 	/**
 	 * Insere um Novo Nó em um local específico da Lista
