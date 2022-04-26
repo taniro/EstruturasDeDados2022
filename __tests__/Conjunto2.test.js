@@ -1,3 +1,7 @@
+import Conjunto from "../src/Conjunto";
+
+
+
 let A, B;
 beforeEach(() => {
 	A = new Conjunto();
