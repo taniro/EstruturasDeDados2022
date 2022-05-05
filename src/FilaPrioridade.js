@@ -28,12 +28,16 @@ class FilaPrioridade {
 		let pos_filho = this.size;
 		let pos_pai = Math.trunc(pos_filho / 2);
 
-		while (this.tree[pos_filho].priority > novo_no.priority) {
+		while (this.tree[pos_filho].priority > this.tree[pos_pai].priority) {
+			let aux = this.tree[pos_filho];
 			this.tree[pos_filho] = this.tree[pos_pai];
+			this.tree[pos_pai] =  aux;
+			
 			pos_filho = pos_pai;
+			pos_pai = Math.trunc(pos_filho / 2);
 		}
 
-		this.tree[pos_filho] = node;
+		//this.tree[pos_filho] = node;
 	}
 
 	/*
@@ -46,15 +50,15 @@ class FilaPrioridade {
 	remove() {
 		let elemento_maior_prioridade = this.tree[1];
 		let ultimo = this.tree[this.size];
-
 		this.tree[1] = ultimo;
 		this.size = this.size - 1;
-
 		let pos_pai;
-
 		for (pos_pai = 1; pos_pai * 2 <= this.size; pos_pai = pos_filho) {
 			pos_filho = pos_pai * 2;
-			if ((pos_filho != this.size) && (this.tree[pos_filho].priority < this.tree[pos_filho + 1].priority)) {
+			if (
+				(pos_filho != this.size) 
+				&&
+				(this.tree[pos_filho].priority < this.tree[pos_filho + 1].priority)) {
 				pos_filho++;
 			}
 			if (ultimo.priority < this.tree[pos_filho].priority) {
@@ -63,7 +67,6 @@ class FilaPrioridade {
 				break;
 			}
 		}
-
 		this.tree[pos_pai] = ultimo;
 		return elemento_maior_prioridade;
 	}
