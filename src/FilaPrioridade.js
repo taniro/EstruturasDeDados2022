@@ -56,7 +56,7 @@ class FilaPrioridade {
 		for (pos_pai = 1; pos_pai * 2 <= this.size; pos_pai = pos_filho) {
 			pos_filho = pos_pai * 2;
 			if (
-				(pos_filho != this.size) 
+				(pos_filho != this.size)
 				&&
 				(this.tree[pos_filho].priority < this.tree[pos_filho + 1].priority)) {
 				pos_filho++;
